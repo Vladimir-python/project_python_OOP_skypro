@@ -1,5 +1,4 @@
-from src.product import Product
-from src.category import Category
+from src.store import Product, Category
 
 
 def test_product_initialization():
@@ -18,15 +17,15 @@ def test_category_initialization():
     assert category.products == products
 
 
-def test_product_count():
-    initial_product_count = Category.product_count
-    products = [Product("Product 3", "Description 3", 60.0, 3), Product("Product 4", "Description 4", 80.0, 6)]
-    category = Category("Test Category 2", "Category Description 2", products)
-    assert Category.product_count == initial_product_count + len(products)
-
-
 def test_category_count():
-    initial_category_count = Category.category_count
+    initial_count = Category.get_category_count()
+    products = [Product("Product 3", "Description 3", 60.0, 3), Product("Product 4", "Description 4", 80.0, 6)]
+    Category("Test Category 2", "Category Description 2", products)
+    assert Category.get_category_count() == initial_count + 1
+
+
+def test_product_count():
+    initial_count = Category.get_product_count()
     products = [Product("Product 5", "Description 5", 70.0, 2)]
-    category = Category("Test Category 3", "Category Description 3", products)
-    assert Category.category_count == initial_category_count + 1
+    Category("Test Category 3", "Category Description 3", products)
+    assert Category.get_product_count() == initial_count + len(products)

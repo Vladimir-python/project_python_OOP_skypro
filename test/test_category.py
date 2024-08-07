@@ -18,3 +18,4 @@ def test_products_property():
     category = Category("Test Category", "Category Description", [product1, product2])
 
     assert category.products == "Test Product 1, 50.0 руб. Остаток: 5 шт.\nTest Product 2, 75.0 руб. Остаток: 8 шт."
+

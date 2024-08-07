@@ -8,3 +8,4 @@ class Product:
     @classmethod
     def new_product(cls, product_params):
         return cls(product_params["name"], product_params["description"], product_params["price"], product_params["quantity"])
+

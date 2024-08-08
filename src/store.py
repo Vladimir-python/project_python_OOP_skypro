@@ -13,27 +13,31 @@ class Product:
 
 
 class Category:
-    __category_count = 0
-    __product_count = 0
+    category_count = 0
+    product_count = 0
 
     @classmethod
     def get_category_count(cls):
-        return cls.__category_count
+        return cls.category_count
 
     @classmethod
     def get_product_count(cls):
-        return cls.__product_count
+        return cls.product_count
 
     def __init__(self, name: str, description: str, products: list):
         self._name = name
         self.description = description
         self.products = products
-        Category.__category_count += 1
-        Category.__product_count += len(products)
+        Category.category_count += 1
+        Category.product_count += len(products)
 
     @property
     def name(self):
         return self._name
+
+    @name.setter
+    def name(self, value):
+        self._name = value
 
 
 if __name__ == "__main__":

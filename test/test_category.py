@@ -7,9 +7,9 @@ def test_add_product():
     product2 = Product("Test Product 2", "Description 2", 75.0, 8)
     category = Category("Test Category", "Category Description", [product1])
 
-    assert len(category._products) == 1
+    assert len(category._Category__products) == 1
     category.add_product(product2)
-    assert len(category._products) == 2
+    assert len(category._Category__products) == 2
 
 
 def test_products_property():

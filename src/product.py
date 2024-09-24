@@ -1,3 +1,5 @@
+# src/product.py
+
 class Product:
     def __init__(self, name, description, price, quantity):
         self.name = name

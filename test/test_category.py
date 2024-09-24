@@ -1,6 +1,8 @@
 from src.product import Product
 from src.category import Category
 
+# Your existing test code
+
 
 def test_add_product():
     product1 = Product("Test Product 1", "Description 1", 50.0, 5)

@@ -1,3 +1,6 @@
+from src.product import Product
+from src.products_subclasses import Smartphone, LawnGrass
+
 class Category:
     def __init__(self, name, description, products):
         self._name = name
@@ -12,7 +15,10 @@ class Category:
         return product_info_str
 
     def add_product(self, product):
-        self.__products.append(product)
+        if isinstance(product, (Product, Smartphone, LawnGrass)):
+            self.__products.append(product)
+        else:
+            raise TypeError("Only instances of Product, Smartphone, or LawnGrass can be added to the category")
 
     def __str__(self):
         total_products = sum(product.quantity for product in self.__products)

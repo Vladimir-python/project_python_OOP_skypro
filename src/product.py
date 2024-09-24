@@ -1,5 +1,3 @@
-# product.py
-
 class Product:
     def __init__(self, name, description, price, quantity):
         self.name = name
@@ -32,3 +30,6 @@ class Product:
 
         total_cost = (self.price * self.quantity) + (other.price * other.quantity)
         return total_cost
+
+    def get_total_price(self):
+        return self.price * self.quantity

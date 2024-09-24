@@ -1,7 +1,7 @@
-# src/product.py
-
 class Product:
     def __init__(self, name, description, price, quantity):
+        if quantity == 0:
+            raise ValueError("Количество товаров не может быть нулевым")
         self.name = name
         self.description = description
         self.__price = price
@@ -27,7 +27,7 @@ class Product:
         return f"{self.name}, {self.price} руб. Остаток: {self.quantity} шт."
 
     def __add__(self, other):
-        if type(self) != type(other):
+        if type(self) is not type(other):
             raise TypeError("Cannot add products of different types")
 
         total_cost = (self.price * self.quantity) + (other.price * other.quantity)
